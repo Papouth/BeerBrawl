@@ -49,7 +49,7 @@ public class sc_PlayerController : MonoBehaviour
      */
     void FixedUpdate()
     {
-        Debug.Log(_movements);
+        //Debug.Log(_movements);
         PlayerMovement();
         PlayerRotation();
     }
@@ -72,7 +72,7 @@ public class sc_PlayerController : MonoBehaviour
 
         hipsRigidbody.transform.position = transform.position;
 
-        Debug.Log(_controllerRigidbody.velocity);
+        //Debug.Log(_controllerRigidbody.velocity);
     }
 
 
@@ -86,13 +86,17 @@ public class sc_PlayerController : MonoBehaviour
         Vector3 direction = new Vector3(_movements.x, 0f, _movements.y);
         direction.Normalize();
 
+        if(direction != Vector3.zero)
+        {
+            _rotationDirection = Quaternion.LookRotation(direction, Vector3.up);
 
-        _rotationDirection = Quaternion.LookRotation(direction, Vector3.up);
+            //hipsRigidbody.rotation = Quaternion.RotateTowards(transform.rotation, _rotationDirection, rotationSpeed * Time.deltaTime);
+            _controllerRigidbody.transform.rotation = Quaternion.RotateTowards(_controllerRigidbody.rotation,
+                _rotationDirection, rotationSpeed * Time.deltaTime);
 
-        //hipsRigidbody.rotation = Quaternion.RotateTowards(transform.rotation, _rotationDirection, rotationSpeed * Time.deltaTime);
-        _controllerRigidbody.transform.rotation = Quaternion.RotateTowards(_controllerRigidbody.rotation, _rotationDirection, rotationSpeed * Time.deltaTime);
-
-        hipsRigidbody.transform.rotation = transform.rotation;
+            hipsRigidbody.transform.rotation = _controllerRigidbody.transform.rotation;
+            Debug.Log(hipsRigidbody.transform.rotation);
+        }
     }
 
     /**
