@@ -11,6 +11,7 @@ public class sc_PlayerController : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private Rigidbody hipsRigidbody;
+    [SerializeField] private Animator animator;
 
     // Player Inputs.
     private Vector2 _movements;
@@ -23,11 +24,6 @@ public class sc_PlayerController : MonoBehaviour
 
     #endregion
 
-    #region Properties
-
-
-
-    #endregion
 
     #region Built-In Methods
 
@@ -41,6 +37,10 @@ public class sc_PlayerController : MonoBehaviour
         _controllerRigidbody = GetComponent<Rigidbody>();
     }
 
+    private void Update()
+    {
+        animator.SetFloat("Move", _controllerRigidbody.velocity.magnitude);
+    }
 
     /**
      * <summary>
@@ -49,7 +49,6 @@ public class sc_PlayerController : MonoBehaviour
      */
     void FixedUpdate()
     {
-        //Debug.Log(_movements);
         PlayerMovement();
         PlayerRotation();
     }
@@ -65,14 +64,9 @@ public class sc_PlayerController : MonoBehaviour
      */
     private void PlayerMovement()
     {
-        //hipsRigidbody.AddForce(hipsRigidbody.transform.forward * moveSpeed);
-        //hipsRigidbody.velocity = (rigidbody.velocity + new Vector3(_movements.x, 0, _movements.y) * (moveSpeed * Time.deltaTime));
-        //hipsRigidbody.AddForce(new Vector3(_movements.x, 0, _movements.y) * moveSpeed, ForceMode.Acceleration);
         _controllerRigidbody.AddForce(new Vector3(_movements.x, 0, _movements.y) * moveSpeed, ForceMode.Acceleration);
 
         hipsRigidbody.transform.position = transform.position;
-
-        //Debug.Log(_controllerRigidbody.velocity);
     }
 
 
@@ -86,16 +80,14 @@ public class sc_PlayerController : MonoBehaviour
         Vector3 direction = new Vector3(_movements.x, 0f, _movements.y);
         direction.Normalize();
 
-        if(direction != Vector3.zero)
+        if (direction != Vector3.zero)
         {
             _rotationDirection = Quaternion.LookRotation(direction, Vector3.up);
 
-            //hipsRigidbody.rotation = Quaternion.RotateTowards(transform.rotation, _rotationDirection, rotationSpeed * Time.deltaTime);
             _controllerRigidbody.transform.rotation = Quaternion.RotateTowards(_controllerRigidbody.rotation,
                 _rotationDirection, rotationSpeed * Time.deltaTime);
 
             hipsRigidbody.transform.rotation = _controllerRigidbody.transform.rotation;
-            Debug.Log(hipsRigidbody.transform.rotation);
         }
     }
 
