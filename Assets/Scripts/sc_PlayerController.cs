@@ -10,13 +10,16 @@ public class sc_PlayerController : MonoBehaviour
     [SerializeField] private float rotationSpeed = 5f;
 
     [Header("Components")] 
-    [SerializeField] private Rigidbody rigidbody;
+    [SerializeField] private Rigidbody hipsRigidbody;
 
     // Player Inputs.
     private Vector2 _movements;
     
     // Player Rotation.
     private Quaternion _rotationDirection;
+    
+    // Private Components.
+    private Rigidbody _controllerRigidbody;
     
     #endregion
 
@@ -35,7 +38,7 @@ public class sc_PlayerController : MonoBehaviour
      */
     void Start()
     {
-        
+     _controllerRigidbody = GetComponent<Rigidbody>();
     }
 
     
@@ -49,45 +52,54 @@ public class sc_PlayerController : MonoBehaviour
         Debug.Log(_movements);
         PlayerMovement();
         PlayerRotation();
+
+        hipsRigidbody.position = transform.position;
+        hipsRigidbody.rotation = transform.rotation;
     }
 
     #endregion
 
     #region Player Behavior Methods
-
-    /**
-     * <summary>
-     * Get the values from the Input Controller.
-     * </summary>
-     */
-    public void OnMove(InputAction.CallbackContext controls) => _movements = controls.ReadValue<Vector2>();
-    
     
     /**
      * <summary>
-     * Movements of the player.
+     * Calculate the movements of the player.
      * </summary>
      */
     private void PlayerMovement()
-    {
-     //rigidbody.AddForce(rigidbody.transform.forward * moveSpeed);
-     //rigidbody.velocity = (rigidbody.velocity + new Vector3(_movements.x, 0, _movements.y) * (moveSpeed * Time.deltaTime));
-     rigidbody.AddForce(new Vector3(_movements.x, 0, _movements.y) * moveSpeed, ForceMode.Acceleration);
+    {  
+     //hipsRigidbody.AddForce(rigidbody.transform.forward * moveSpeed);
+     //hipsRigidbody.velocity = (rigidbody.velocity + new Vector3(_movements.x, 0, _movements.y) * (moveSpeed * Time.deltaTime));
+     //hipsRigidbody.AddForce(new Vector3(_movements.x, 0, _movements.y) * moveSpeed, ForceMode.Acceleration);
+     //_controllerRigidbody.velocity += new Vector3(_movements.x, 0f, _movements.y) * (moveSpeed * Time.deltaTime);
+     _controllerRigidbody.MovePosition(transform.position + (new Vector3(_movements.x, 0f, _movements.y * moveSpeed * Time.deltaTime)));
     }
 
 
+    /**
+     * <summary>
+     * Calculate the rotation of the player.
+     * </summary>
+     */
     private void PlayerRotation()
     {
      Vector3 direction = new Vector3(_movements.x, 0f, _movements.y);
      direction.Normalize();
 
-     if (rigidbody.velocity != Vector3.zero && direction != Vector3.zero)
+     if (hipsRigidbody.velocity != Vector3.zero && direction != Vector3.zero)
      {
       _rotationDirection = Quaternion.LookRotation(direction, Vector3.up);
       
       transform.rotation = Quaternion.RotateTowards(transform.rotation, _rotationDirection, rotationSpeed * Time.deltaTime);
      }
     }
+    
+    /**
+     * <summary>
+     * Get the values from the Input Controller.
+     * </summary>
+     */
+    public void OnMove(InputAction.CallbackContext controls) => _movements = controls.ReadValue<Vector2>();
     
     #endregion
 }
