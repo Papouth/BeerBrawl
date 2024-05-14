@@ -47,14 +47,11 @@ public class sc_PlayerController : MonoBehaviour
      * Update is called once per frame.
      * </summary>
      */
-    void Update()
+    void FixedUpdate()
     {
         Debug.Log(_movements);
         PlayerMovement();
         PlayerRotation();
-
-        hipsRigidbody.position = transform.position;
-        hipsRigidbody.rotation = transform.rotation;
     }
 
     #endregion
@@ -68,11 +65,9 @@ public class sc_PlayerController : MonoBehaviour
      */
     private void PlayerMovement()
     {  
-     //hipsRigidbody.AddForce(rigidbody.transform.forward * moveSpeed);
+     //hipsRigidbody.AddForce(hipsRigidbody.transform.forward * moveSpeed);
      //hipsRigidbody.velocity = (rigidbody.velocity + new Vector3(_movements.x, 0, _movements.y) * (moveSpeed * Time.deltaTime));
-     //hipsRigidbody.AddForce(new Vector3(_movements.x, 0, _movements.y) * moveSpeed, ForceMode.Acceleration);
-     //_controllerRigidbody.velocity += new Vector3(_movements.x, 0f, _movements.y) * (moveSpeed * Time.deltaTime);
-     _controllerRigidbody.MovePosition(transform.position + (new Vector3(_movements.x, 0f, _movements.y * moveSpeed * Time.deltaTime)));
+     hipsRigidbody.AddForce(new Vector3(_movements.x, 0, _movements.y) * moveSpeed, ForceMode.Acceleration);
     }
 
 
@@ -90,7 +85,7 @@ public class sc_PlayerController : MonoBehaviour
      {
       _rotationDirection = Quaternion.LookRotation(direction, Vector3.up);
       
-      transform.rotation = Quaternion.RotateTowards(transform.rotation, _rotationDirection, rotationSpeed * Time.deltaTime);
+      hipsRigidbody.rotation = Quaternion.RotateTowards(transform.rotation, _rotationDirection, rotationSpeed * Time.deltaTime);
      }
     }
     
