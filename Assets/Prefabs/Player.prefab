@@ -1061,12 +1061,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216974258871269221}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: -0.0000000011730324, z: 9.260785e-10, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3724724836518242767}
+  m_Father: {fileID: 5263829057081776352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &4730752565422833386
 Rigidbody:
@@ -1137,6 +1137,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4e282e1b-3ac4-4e7f-8981-fa42f0b0ef36
     m_ActionName: Gameplay/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8977584791254828123}
+        m_TargetAssemblyTypeName: sc_PlayerController, Assembly-CSharp
+        m_MethodName: OnDive
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f9ab5d28-730d-4fdd-a9d2-0f1bdb211d18
+    m_ActionName: Gameplay/Actions[/XInputControllerWindows1/buttonSouth,/XInputControllerWindows/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -1156,7 +1172,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   rotationSpeed: 600
+  timeAfterDiveFinished: 1
+  diveAnimation: {fileID: -203655887218126122, guid: 89957eb19bd3bde4e912a602cef9ce8c,
+    type: 3}
   hipsRigidbody: {fileID: 8302724165429150408}
+  ragdollJoints:
+  - {fileID: 6141840940695219924}
+  - {fileID: 1500179200123702515}
+  - {fileID: 738467851171630722}
+  - {fileID: 4532309113493591895}
+  - {fileID: 2589937548793194882}
+  - {fileID: 3774091578252374843}
+  - {fileID: 3733005446372701162}
+  - {fileID: 5223661360637752559}
+  - {fileID: 8948878643252626690}
+  - {fileID: 6619880996872665507}
+  playerAnimator: {fileID: 6857484124403456884}
 --- !u!136 &6989326379938636351
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1209,7 +1240,8 @@ Transform:
   m_LocalPosition: {x: -0.000000029336661, y: 4.656577e-10, z: -0.000000047439244}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3770212552461859529}
   m_Father: {fileID: 438486266509187464}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &2919422749042948047
@@ -2291,7 +2323,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3770212552461859529}
   - {fileID: 438486266509187464}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4377,7 +4408,7 @@ Animator:
   m_GameObject: {fileID: 8435255996794330374}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: dccb9fef9cc2e1d4382c84df496dc1fa, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f5c82fbf6a855047b32e0d7572a2e3b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
