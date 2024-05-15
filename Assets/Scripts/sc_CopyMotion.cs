@@ -24,7 +24,7 @@ public class sc_CopyMotion : MonoBehaviour
     void Start()
     {
         _configurableJoint = GetComponent<ConfigurableJoint>();
-        _startRotation = transform.rotation;
+        _startRotation = transform.localRotation;
     }
 
     
@@ -38,7 +38,7 @@ public class sc_CopyMotion : MonoBehaviour
         if (!mirrorAnimation)
         {
             //configurableJoint.targetRotation = targetLimb.localRotation * _startRotation;
-            _configurableJoint.SetTargetRotationLocal(targetLimb.rotation, _startRotation);
+            _configurableJoint.SetTargetRotationLocal(targetLimb.localRotation, _startRotation);
         }
         else
         {
