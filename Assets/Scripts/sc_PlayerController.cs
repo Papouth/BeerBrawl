@@ -9,26 +9,22 @@ public class sc_PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotationSpeed = 5f;
 
-    [Header("Components")] 
+    [Header("Components")]
     [SerializeField] private Rigidbody hipsRigidbody;
+    [SerializeField] private Animator animator;
 
     // Player Inputs.
     private Vector2 _movements;
-    
+
     // Player Rotation.
     private Quaternion _rotationDirection;
-    
+
     // Private Components.
     private Rigidbody _controllerRigidbody;
-    
-    #endregion
-
-    #region Properties
-
-    
 
     #endregion
-    
+
+
     #region Built-In Methods
 
     /**
@@ -38,41 +34,39 @@ public class sc_PlayerController : MonoBehaviour
      */
     void Start()
     {
-     _controllerRigidbody = GetComponent<Rigidbody>();
+        _controllerRigidbody = GetComponent<Rigidbody>();
     }
 
-    
+    private void Update()
+    {
+        animator.SetFloat("Move", _controllerRigidbody.velocity.magnitude);
+    }
+
     /**
      * <summary>
      * Update is called once per frame.
      * </summary>
      */
-    void Update()
+    void FixedUpdate()
     {
-        Debug.Log(_movements);
         PlayerMovement();
         PlayerRotation();
-
-        hipsRigidbody.position = transform.position;
-        hipsRigidbody.rotation = transform.rotation;
     }
 
     #endregion
 
     #region Player Behavior Methods
-    
+
     /**
      * <summary>
      * Calculate the movements of the player.
      * </summary>
      */
     private void PlayerMovement()
-    {  
-     //hipsRigidbody.AddForce(rigidbody.transform.forward * moveSpeed);
-     //hipsRigidbody.velocity = (rigidbody.velocity + new Vector3(_movements.x, 0, _movements.y) * (moveSpeed * Time.deltaTime));
-     //hipsRigidbody.AddForce(new Vector3(_movements.x, 0, _movements.y) * moveSpeed, ForceMode.Acceleration);
-     //_controllerRigidbody.velocity += new Vector3(_movements.x, 0f, _movements.y) * (moveSpeed * Time.deltaTime);
-     _controllerRigidbody.MovePosition(transform.position + (new Vector3(_movements.x, 0f, _movements.y * moveSpeed * Time.deltaTime)));
+    {
+        _controllerRigidbody.AddForce(new Vector3(_movements.x, 0, _movements.y) * moveSpeed, ForceMode.Acceleration);
+
+        hipsRigidbody.transform.position = transform.position;
     }
 
 
@@ -83,23 +77,26 @@ public class sc_PlayerController : MonoBehaviour
      */
     private void PlayerRotation()
     {
-     Vector3 direction = new Vector3(_movements.x, 0f, _movements.y);
-     direction.Normalize();
+        Vector3 direction = new Vector3(_movements.x, 0f, _movements.y);
+        direction.Normalize();
 
-     if (hipsRigidbody.velocity != Vector3.zero && direction != Vector3.zero)
-     {
-      _rotationDirection = Quaternion.LookRotation(direction, Vector3.up);
-      
-      transform.rotation = Quaternion.RotateTowards(transform.rotation, _rotationDirection, rotationSpeed * Time.deltaTime);
-     }
+        if (direction != Vector3.zero)
+        {
+            _rotationDirection = Quaternion.LookRotation(direction, Vector3.up);
+
+            _controllerRigidbody.transform.rotation = Quaternion.RotateTowards(_controllerRigidbody.rotation,
+                _rotationDirection, rotationSpeed * Time.deltaTime);
+
+            hipsRigidbody.transform.rotation = _controllerRigidbody.transform.rotation;
+        }
     }
-    
+
     /**
      * <summary>
      * Get the values from the Input Controller.
      * </summary>
      */
     public void OnMove(InputAction.CallbackContext controls) => _movements = controls.ReadValue<Vector2>();
-    
+
     #endregion
 }
