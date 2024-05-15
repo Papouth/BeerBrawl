@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -75,6 +76,21 @@ public class sc_PlayerController : MonoBehaviour
         }
         
         playerAnimator.SetFloat($"Locomotion", _controllerRigidbody.velocity.magnitude);
+    }
+
+
+    /**
+     * <summary>
+     * OnCollisionEnter is called when this collider/rigidbody has begun touching another rigidbody/collider.
+     * </summary>
+     * <param name="other">The Collision data associated with this collision event.</param>
+     */
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.TryGetComponent(out sc_BallController ballController))
+        {
+            IsExpelled(ballController.IsPushed);
+        }
     }
 
     #endregion
@@ -209,6 +225,27 @@ public class sc_PlayerController : MonoBehaviour
     private void CanMove(bool value)
     {
         _canMove = value;
+    }
+
+
+    /**
+     * <summary>
+     * Check if the player is going to be need to be expelled.
+     * </summary>
+     */
+    private void IsExpelled(bool canBeExpelled)
+    {
+        if (!canBeExpelled) return;
+        CanMove(false);
+
+        foreach (ConfigurableJoint joint in ragdollJoints)
+        {
+            JointDrive jointXDrive = joint.angularXDrive;
+            jointXDrive.positionSpring = 0f;
+
+            JointDrive jointYZDrive = joint.angularYZDrive;
+            jointYZDrive.positionSpring = 0f;
+        }
     }
 
     #endregion
