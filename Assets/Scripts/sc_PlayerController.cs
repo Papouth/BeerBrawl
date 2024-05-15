@@ -73,6 +73,8 @@ public class sc_PlayerController : MonoBehaviour
             PlayerMovement();
             PlayerRotation();
         }
+        
+        playerAnimator.SetFloat($"Locomotion", _controllerRigidbody.velocity.magnitude);
     }
 
     #endregion
@@ -113,7 +115,7 @@ public class sc_PlayerController : MonoBehaviour
         _controllerRigidbody.AddForce(new Vector3(_movements.x, 0, _movements.y) * moveSpeed, ForceMode.Acceleration);
 
         hipsRigidbody.transform.position = transform.position;
-
+        
         //Debug.Log(_controllerRigidbody.velocity);
     }
 
