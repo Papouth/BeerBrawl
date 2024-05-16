@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cueStick: {fileID: 6935555256721231888, guid: 58fdf4f0ad296014d8b89e8309055c1d,
     type: 3}
+  ball: {fileID: 2278163706720122439}
+  speedBall: 40
 --- !u!1 &6716254464991920532
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +92,7 @@ Rigidbody:
   m_GameObject: {fileID: 6716254464991920532}
   serializedVersion: 4
   m_Mass: 1000
-  m_Drag: 0
+  m_Drag: 0.01
   m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
