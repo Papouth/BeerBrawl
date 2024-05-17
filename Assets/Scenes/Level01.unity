@@ -1798,8 +1798,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &505774916
-MeshCollider:
+--- !u!65 &505774920
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1816,10 +1816,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 70948873267775455, guid: a6012de9acfaaa3468eb013ae8d0848b, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.0024479495, y: 0.002447949, z: 0.0005987804}
+  m_Center: {x: 0, y: -9.895302e-10, z: 0.00029939113}
 --- !u!1001 &658870383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2106,6 +2105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 804125432}
   - component: {fileID: 804125433}
+  - component: {fileID: 804125434}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2173,6 +2173,24 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &804125434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804125431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 052d41fde58df82489d846d02e61498f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundNum: 0
+  playerJoined: 0
+  players: []
+  playerSpawnPoints: []
+  playersAlive: []
+  winRoundCheck: 0
 --- !u!1001 &821468740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2801,9 +2819,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1141241442}
+  - component: {fileID: 1141241443}
   m_Layer: 0
   m_Name: PlayerSpawner (2)
-  m_TagString: boule
+  m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2817,12 +2836,24 @@ Transform:
   m_GameObject: {fileID: 1141241441}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.84, y: 0.6329994, z: 21.39}
+  m_LocalPosition: {x: 10.84, y: -0.63199997, z: 21.39}
   m_LocalScale: {x: 45.7425, y: 45.7425, z: 45.7425}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1857862121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1141241443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141241441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7e0eecbf1a56946855bd1ec0ea52ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1177831803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3417,9 +3448,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1327375432}
+  - component: {fileID: 1327375433}
   m_Layer: 0
   m_Name: PlayerSpawner (1)
-  m_TagString: boule
+  m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3433,12 +3465,24 @@ Transform:
   m_GameObject: {fileID: 1327375431}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.88, y: 0.6329994, z: 50.36}
+  m_LocalPosition: {x: 10.88, y: -0.63199997, z: 50.36}
   m_LocalScale: {x: 45.7425, y: 45.7425, z: 45.7425}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1857862121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1327375433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327375431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7e0eecbf1a56946855bd1ec0ea52ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1346829086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3952,11 +3996,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 299060081844733182, guid: fba0b14d36f23644ea60ca1c6c3a1c6c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 505774916}
+      addedObject: {fileID: 505774915}
     - targetCorrespondingSourceObject: {fileID: 299060081844733182, guid: fba0b14d36f23644ea60ca1c6c3a1c6c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 505774915}
+      addedObject: {fileID: 505774920}
   m_SourcePrefab: {fileID: 100100000, guid: fba0b14d36f23644ea60ca1c6c3a1c6c, type: 3}
 --- !u!4 &1595605240 stripped
 Transform:
@@ -4522,9 +4566,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1698012224}
+  - component: {fileID: 1698012225}
   m_Layer: 0
   m_Name: PlayerSpawner (3)
-  m_TagString: boule
+  m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4538,12 +4583,24 @@ Transform:
   m_GameObject: {fileID: 1698012223}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.7, y: 0.6329994, z: 15.2}
+  m_LocalPosition: {x: -12.7, y: -0.63199997, z: 15.2}
   m_LocalScale: {x: 45.7425, y: 45.7425, z: 45.7425}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1857862121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1698012225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698012223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7e0eecbf1a56946855bd1ec0ea52ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1701202534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6336,7 +6393,7 @@ Transform:
   m_GameObject: {fileID: 7878046007647599106}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.89, y: 0.6329994, z: 49.38}
+  m_LocalPosition: {x: -10.89, y: -0.632, z: 49.38}
   m_LocalScale: {x: 45.7425, y: 45.7425, z: 45.7425}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -6526,13 +6583,26 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 508937941958599463}
+  - component: {fileID: 7878046007647599107}
   m_Layer: 0
   m_Name: PlayerSpawner
-  m_TagString: boule
+  m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7878046007647599107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7878046007647599106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7e0eecbf1a56946855bd1ec0ea52ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8249933494592435939
 Transform:
   m_ObjectHideFlags: 0
