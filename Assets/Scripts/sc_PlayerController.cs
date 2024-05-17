@@ -87,9 +87,9 @@ public class sc_PlayerController : MonoBehaviour
      */
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.TryGetComponent(out sc_BallController ballController))
+        if (other.gameObject.TryGetComponent(out sc_ObjController objController))
         {
-            IsExpelled(ballController.IsPushed);
+            IsExpelled(objController.IsPushed);
         }
     }
 

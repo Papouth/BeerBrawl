@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -2063145113201189480}
   m_Layer: 0
   m_Name: pb_ball04
-  m_TagString: Untagged
+  m_TagString: boule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

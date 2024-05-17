@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3223374412489630603}
   m_Layer: 0
   m_Name: pb_ballwhite
-  m_TagString: Untagged
+  m_TagString: blanche
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
