@@ -130,7 +130,7 @@ MonoBehaviour:
   cueStick: {fileID: 6935555256721231888, guid: 58fdf4f0ad296014d8b89e8309055c1d,
     type: 3}
   ball: {fileID: -4014903361495468648}
-  speedBall: 30
+  speedBall: 35
 --- !u!1001 &524868008272935615
 PrefabInstance:
   m_ObjectHideFlags: 0

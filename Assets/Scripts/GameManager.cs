@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     #region Variables
     [Tooltip("Compte le nombre de manche")] [SerializeField] private int roundNum;
     [Tooltip("Le nombre de joueurs qui join la game")] public int playerJoined;
-    [Tooltip("La liste de nos joueurs qui ont rejoins la partie")] [SerializeField] private List<GameObject> players = new List<GameObject>();
+    [Tooltip("La liste de nos joueurs qui ont rejoins la partie")] public List<GameObject> players = new List<GameObject>();
     [Tooltip("Les points de spawn des joueurs")] public List<Transform> playerSpawnPoints = new List<Transform>();
 
     [Tooltip("Les joueurs actuellement en vie")] public List<GameObject> playersAlive = new List<GameObject>();
@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         roundNum = 0;
+
+        FindSpawns();
     }
 
     private void Update()
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
         if (playersAlive.Count == 1 && !winRoundCheck)
         {
             winRoundCheck = true;
-            // On donne un point supplémentaire au joueur qui viens de gagner la manche
+            // On donne un point supplï¿½mentaire au joueur qui viens de gagner la manche
             //playersAlive(0).AddPoint;
         }
     }
@@ -48,10 +50,10 @@ public class GameManager : MonoBehaviour
     private void NextRound()
     {
         WinGame();
-        // Lance la manche suivante en loadant uen autre scène
+        // Lance la manche suivante en loadant uen autre scï¿½ne
         winRoundCheck = false;
 
-        // On cherche les points de spawn des joueurs avant de les faire apparaître sur la carte
+        // On cherche les points de spawn des joueurs avant de les faire apparaï¿½tre sur la carte
         FindSpawns();
     }
 
@@ -60,13 +62,13 @@ public class GameManager : MonoBehaviour
         // Chope le joueur gagnant et affiche le score des autres joueurs
         foreach (var player in players)
         {
-           // check si le player à gagner un nombre suffisant de round pour gagner la partie
+           // check si le player ï¿½ gagner un nombre suffisant de round pour gagner la partie
         }
     }
 
     private void FindSpawns()
     {
-        // On delete les points de spawn connus précédent
+        // On delete les points de spawn connus prï¿½cï¿½dent
         playerSpawnPoints.Clear();
 
         // On attribu les nouveaux points de spawn des joueurs
