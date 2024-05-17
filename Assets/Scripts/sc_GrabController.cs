@@ -135,9 +135,15 @@ public class sc_GrabController : MonoBehaviour
                 playerAnimator.SetBool($"RightGrab", true);
             }
 
-            FixedJoint fixedJoint = _grabbedObject.AddComponent<FixedJoint>();
-            fixedJoint.connectedBody = _handRigidbody;
-            fixedJoint.breakForce = 9001;
+            if(_grabbedObject)
+            {
+                if (!_grabbedObject.GetComponent<FixedJoint>())
+                {
+                    FixedJoint fixedJoint = _grabbedObject.AddComponent<FixedJoint>();
+                    fixedJoint.connectedBody = _handRigidbody;
+                    fixedJoint.breakForce = 9001;
+                }
+            }
             
             // bool déja appuyer -> true
             _grabOn = true;
@@ -146,14 +152,8 @@ public class sc_GrabController : MonoBehaviour
         {
             if (_grabOn)
             {
-                if (_leftGrabInput)
-                {
-                    playerAnimator.SetBool($"LeftGrab", true);
-                }
-                else if (_rightGrabInput)
-                {
-                    playerAnimator.SetBool($"RightGrab", true);
-                }
+                playerAnimator.SetBool($"LeftGrab", false);
+                playerAnimator.SetBool($"RightGrab", false);
 
                 if (_grabbedObject != null)
                 {
