@@ -12,7 +12,10 @@ public class GameManager : MonoBehaviour
     [Tooltip("Les points de spawn des joueurs")] public List<Transform> playerSpawnPoints = new List<Transform>();
 
     [Tooltip("Les joueurs actuellement en vie")] public List<GameObject> playersAlive = new List<GameObject>();
+    public int playerAliveNum;
     [SerializeField] private bool winRoundCheck;
+
+    [SerializeField] private GameObject panelWin;
     #endregion
 
 
@@ -24,6 +27,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        panelWin.SetActive(false);
+        Time.timeScale = 1;
+
         roundNum = 0;
 
         FindSpawns();
@@ -31,7 +37,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        WinRound();
+        if (playerJoined > 1)
+        {
+            WinRound();
+        }
     }
     #endregion
 
@@ -39,12 +48,20 @@ public class GameManager : MonoBehaviour
     #region Customs Methods
     public void WinRound()
     {
-        if (playersAlive.Count == 1 && !winRoundCheck)
+        if (playerAliveNum == 1 && !winRoundCheck)
         {
             winRoundCheck = true;
-            // On donne un point suppl�mentaire au joueur qui viens de gagner la manche
+            Invoke("StopGame", 3f);
+
+            // On donne un point supplementaire au joueur qui viens de gagner la manche
             //playersAlive(0).AddPoint;
         }
+    }
+
+    private void StopGame()
+    {
+        panelWin.SetActive(true);
+        Time.timeScale = 0;
     }
 
     private void NextRound()
