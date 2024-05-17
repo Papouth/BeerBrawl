@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     #region Variables
     [Tooltip("Compte le nombre de manche")] [SerializeField] private int roundNum;
     [Tooltip("Le nombre de joueurs qui join la game")] public int playerJoined;
-    [Tooltip("La liste de nos joueurs qui ont rejoins la partie")] [SerializeField] private List<GameObject> players = new List<GameObject>();
+    [Tooltip("La liste de nos joueurs qui ont rejoins la partie")] public List<GameObject> players = new List<GameObject>();
     [Tooltip("Les points de spawn des joueurs")] public List<Transform> playerSpawnPoints = new List<Transform>();
 
     [Tooltip("Les joueurs actuellement en vie")] public List<GameObject> playersAlive = new List<GameObject>();
@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         roundNum = 0;
+
+        FindSpawns();
     }
 
     private void Update()
