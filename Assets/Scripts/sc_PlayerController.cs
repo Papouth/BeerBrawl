@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,8 +12,13 @@ public class sc_PlayerController : MonoBehaviour
     [SerializeField] private float rotationSpeed = 5f;
     [SerializeField] private float timeAfterDiveFinished = 1f;
 
+    [Header("Player Stats Values")]
+    [SerializeField] private float playerMaxLife = 100f;
+    [SerializeField] private float damage = 10f;
+    
     [Header("Animations Length")] 
     [SerializeField] private AnimationClip diveAnimation;
+    [SerializeField] private AnimationClip attackAnimation;
     
     [Header("Components")]
     [SerializeField] private Rigidbody hipsRigidbody;
@@ -24,19 +28,36 @@ public class sc_PlayerController : MonoBehaviour
     // Player Inputs.
     private Vector2 _movements;
     private bool _diveInput;
+    private bool _attackInput;
 
+    // Stats.
+    private float _playerLife;
+    
     // Player Rotation.
     private Quaternion _rotationDirection;
     
     // Conditions.
     private bool _canDive = true;
     private bool _canMove = true;
+    private bool _isDead;
+    private bool _isAttack;
+    private bool _canAttack;
     
     // Private Components.
     private Rigidbody _controllerRigidbody;
 
     #endregion
 
+    #region Properties
+
+    public bool IsAttack
+    {
+        get => _isAttack;
+        set => _isAttack = value;
+    }
+
+    #endregion
+    
     #region Built-In Methods
 
     /**
@@ -47,6 +68,8 @@ public class sc_PlayerController : MonoBehaviour
     void Start()
     {
         _controllerRigidbody = GetComponent<Rigidbody>();
+
+        _playerLife = playerMaxLife;
     }
 
 
@@ -57,7 +80,9 @@ public class sc_PlayerController : MonoBehaviour
      */
     void Update()
     {
-        PlayerDiveStart();
+        //PlayerDiveStart();
+
+        if (_attackInput && _canAttack) StartCoroutine(Attack());
     }
     
     
@@ -74,7 +99,6 @@ public class sc_PlayerController : MonoBehaviour
             PlayerMovement();
             PlayerRotation();
         }
-        
         playerAnimator.SetFloat($"Locomotion", _controllerRigidbody.velocity.magnitude);
     }
 
@@ -91,11 +115,21 @@ public class sc_PlayerController : MonoBehaviour
         {
             IsExpelled(objController.IsPushed);
         }
+
+        if (other.gameObject.layer == LayerMask.NameToLayer("ragdoll") &&
+            other.gameObject.TryGetComponent(out sc_PlayerController playerController))
+        {
+            if (playerController._isAttack)
+            {
+                playerController._isAttack = false;
+                TakeDamage();
+            }
+        }
     }
 
     #endregion
 
-    #region Player Behavior Methods
+    #region Inputs Methods
 
     /**
      * <summary>
@@ -116,7 +150,22 @@ public class sc_PlayerController : MonoBehaviour
     {
         _diveInput = controls.performed;
     }
+
+
+    /**
+     * <summary>
+     * Get the value of the Attack Input.
+     * </summary>
+     * * <param name="controls">Get the controls of the Input System.</param>
+     */
+    public void OnAttack(InputAction.CallbackContext controls)
+    {
+        _attackInput = controls.performed;
+    }
+
+    #endregion
     
+    #region Player Behavior Methods
     
     /**
      * <summary>
@@ -168,11 +217,11 @@ public class sc_PlayerController : MonoBehaviour
     {
         if (_diveInput && _canDive)
         {
-            CanMove(false);
+            //CanMove(false);
             _diveInput = false;
             _canDive = false;
             
-            playerAnimator.SetBool($"Dive", true);
+            //playerAnimator.SetBool($"Dive", true);
 
             StartCoroutine(PlayerDiveReset());
         }
@@ -186,8 +235,11 @@ public class sc_PlayerController : MonoBehaviour
      */
     private IEnumerator PlayerDiveReset()
     {
-        yield return new WaitForSeconds(diveAnimation.length);
-        playerAnimator.SetBool($"Dive", false);
+        _controllerRigidbody.AddForce(transform.forward * 50f, ForceMode.Impulse);
+        
+        //yield return new WaitForSeconds(diveAnimation.length);
+        
+        //playerAnimator.SetBool($"Dive", false);
         
         foreach (ConfigurableJoint joint in ragdollJoints)
         {
@@ -197,7 +249,9 @@ public class sc_PlayerController : MonoBehaviour
             JointDrive jointYZDrive = joint.angularYZDrive;
             jointYZDrive.positionSpring = 100f;
         }
-
+        
+        hipsRigidbody.position = transform.position;
+        
         yield return new WaitForSeconds(timeAfterDiveFinished);
         
         foreach (ConfigurableJoint joint in ragdollJoints)
@@ -213,6 +267,17 @@ public class sc_PlayerController : MonoBehaviour
         _canDive = true;
     }
 
+
+    /**
+     * <summary>
+     * Remove the damage from the player's life.
+     * </summary>
+     */
+    private void TakeDamage()
+    {
+        _playerLife -= damage;
+    }
+    
     #endregion
 
     #region Conditions Methods
@@ -238,6 +303,9 @@ public class sc_PlayerController : MonoBehaviour
         if (!canBeExpelled) return;
         CanMove(false);
 
+        hipsRigidbody.freezeRotation = false;
+        _controllerRigidbody.freezeRotation = false;
+        
         foreach (ConfigurableJoint joint in ragdollJoints)
         {
             JointDrive jointXDrive = joint.angularXDrive;
@@ -246,6 +314,28 @@ public class sc_PlayerController : MonoBehaviour
             JointDrive jointYZDrive = joint.angularYZDrive;
             jointYZDrive.positionSpring = 0f;
         }
+    }
+
+
+    /**
+     * <summary>
+     * Attack Behavior
+     * </summary>
+     */
+    private IEnumerator Attack()
+    {
+        _attackInput = false;
+        
+        playerAnimator.SetBool($"Attack", true);
+        playerAnimator.SetBool($"Attack", false);
+        
+        _isAttack = true;
+        _canAttack = false;
+        yield return new WaitForSeconds(attackAnimation.length);
+        _isAttack = false;
+
+        yield return new WaitForSeconds(1f);
+        _canAttack = true;
     }
 
     #endregion
