@@ -1,0 +1,483 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5188157921066626285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 323904029596063293}
+  m_Layer: 0
+  m_Name: pb_PokerChipsGroupeRed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &323904029596063293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5188157921066626285}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.187, y: 1.4506, z: 0.169}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9174145092120809916}
+  - {fileID: 1631439285548155091}
+  - {fileID: 1475134674603442226}
+  - {fileID: 710438310583364934}
+  - {fileID: 8073321427449652143}
+  - {fileID: 9215592960449104353}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &507961859878086565
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 323904029596063293}
+    m_Modifications:
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.017698377
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.055599928
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.013600007
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089397656225259867, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_Name
+      value: pb_PokerChip08 (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89c1bbee7634a3f49863886f7aacae3d, type: 3}
+--- !u!4 &710438310583364934 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 507961859878086565}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1475134674603442225
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 323904029596063293}
+    m_Modifications:
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.017698377
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.04100001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0211
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089397656225259867, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_Name
+      value: pb_PokerChip08 (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89c1bbee7634a3f49863886f7aacae3d, type: 3}
+--- !u!4 &1475134674603442226 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1475134674603442225}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1761846561918913072
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 323904029596063293}
+    m_Modifications:
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.017698377
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.026299953
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.015411764
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089397656225259867, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_Name
+      value: pb_PokerChip08 (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89c1bbee7634a3f49863886f7aacae3d, type: 3}
+--- !u!4 &1631439285548155091 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1761846561918913072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8156867229702701826
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 323904029596063293}
+    m_Modifications:
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.017698377
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.013999939
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.013600007
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089397656225259867, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_Name
+      value: pb_PokerChip08 (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89c1bbee7634a3f49863886f7aacae3d, type: 3}
+--- !u!4 &9215592960449104353 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8156867229702701826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8180299600123239263
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 323904029596063293}
+    m_Modifications:
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.017698377
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0153000355
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.015411764
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089397656225259867, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_Name
+      value: pb_PokerChip08
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89c1bbee7634a3f49863886f7aacae3d, type: 3}
+--- !u!4 &9174145092120809916 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8180299600123239263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9141582044926781772
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 323904029596063293}
+    m_Modifications:
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.017698377
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00059998035
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0211
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089397656225259867, guid: 89c1bbee7634a3f49863886f7aacae3d,
+        type: 3}
+      propertyPath: m_Name
+      value: pb_PokerChip08 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89c1bbee7634a3f49863886f7aacae3d, type: 3}
+--- !u!4 &8073321427449652143 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1069428439487646435, guid: 89c1bbee7634a3f49863886f7aacae3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 9141582044926781772}
+  m_PrefabAsset: {fileID: 0}
