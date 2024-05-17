@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class sc_UiManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class sc_UiManager : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject waitingRoom;
     [SerializeField] private GameObject settings;
+    [SerializeField] private GameObject levelSelection;
 
     #endregion
 
@@ -46,4 +48,48 @@ public class sc_UiManager : MonoBehaviour
     }
     
     #endregion
+
+    #region Settings Manager
+
+    public void LoadMenu()
+    {
+        StartCoroutine(DelayMenu());
+    }
+
+    private IEnumerator DelayMenu()
+    {
+        yield return new WaitForSeconds(timeBeforeLoad);
+        settings.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+
+    #endregion
+
+    #region Waiting Room Manager
+
+    public void LoadLevels()
+    {
+        StartCoroutine(DelayLoadLevels());
+    }
+
+    private IEnumerator DelayLoadLevels()
+    {
+        yield return new WaitForSeconds(timeBeforeLoad);
+        waitingRoom.SetActive(false);
+        levelSelection.SetActive(true);
+    }
+
+    #endregion
+
+    public void LoadPool()
+    {
+        StartCoroutine(DelayPool());
+    }
+
+    private IEnumerator DelayPool()
+    {
+        yield return new WaitForSeconds(timeBeforeLoad);
+        SceneManager.LoadScene("Level01", LoadSceneMode.Single);
+    }
+
 }
