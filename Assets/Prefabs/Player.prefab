@@ -2183,35 +2183,11 @@ MonoBehaviour:
     m_ActionId: 1f1cb40f-81f5-43a7-85f7-e3736eacbc0d
     m_ActionName: Gameplay/Attack[/XInputControllerWindows/buttonEast,/XInputControllerWindows1/buttonEast,/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8977584791254828123}
-        m_TargetAssemblyTypeName: sc_PlayerController, Assembly-CSharp
-        m_MethodName: OnGrabLeft
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 36a83c25-e487-429c-b538-7c15a07a81ea
     m_ActionName: Gameplay/GrabLeft[/XInputControllerWindows/leftShoulder,/XInputControllerWindows1/leftShoulder,/Keyboard/z]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8977584791254828123}
-        m_TargetAssemblyTypeName: sc_PlayerController, Assembly-CSharp
-        m_MethodName: OnGrabRight
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 1f020f91-26c4-4171-99a1-060cb712242d
     m_ActionName: Gameplay/GrabRight[/XInputControllerWindows/rightShoulder,/XInputControllerWindows1/rightShoulder,/Keyboard/c]
   m_NeverAutoSwitchControlSchemes: 0
@@ -2238,7 +2214,8 @@ MonoBehaviour:
   damage: 10
   diveAnimation: {fileID: -203655887218126122, guid: f1bbb55efdd8d7848bb1e65c65385101,
     type: 3}
-  attackAnimation: {fileID: 0}
+  attackAnimation: {fileID: -203655887218126122, guid: 3ba8c1049c5b08147be6dbde24d3f83f,
+    type: 3}
   hipsRigidbody: {fileID: 8302724165429150408}
   ragdollJoints:
   - {fileID: 6141840940695219924}
@@ -10217,6 +10194,7 @@ GameObject:
   - component: {fileID: 1763529430850133927}
   - component: {fileID: 3195827635422440216}
   - component: {fileID: 2710715323869391415}
+  - component: {fileID: 1553578002517390672}
   m_Layer: 0
   m_Name: mixamorig:RightHand
   m_TagString: Untagged
@@ -10419,8 +10397,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: 0}
-  m_NotificationBehavior: 0
+  m_Actions: {fileID: -944628639613478452, guid: 2f9c0013302d6874189fac5d9331102e,
+    type: 3}
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -10431,12 +10410,58 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4e282e1b-3ac4-4e7f-8981-fa42f0b0ef36
+    m_ActionName: Gameplay/Move[/XInputControllerWindows/leftStick,/XInputControllerWindows1/leftStick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f9ab5d28-730d-4fdd-a9d2-0f1bdb211d18
+    m_ActionName: Gameplay/Dive[/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth,/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1f1cb40f-81f5-43a7-85f7-e3736eacbc0d
+    m_ActionName: Gameplay/Attack[/XInputControllerWindows/buttonEast,/XInputControllerWindows1/buttonEast,/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 36a83c25-e487-429c-b538-7c15a07a81ea
+    m_ActionName: Gameplay/GrabLeft[/XInputControllerWindows/leftShoulder,/XInputControllerWindows1/leftShoulder,/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1553578002517390672}
+        m_TargetAssemblyTypeName: sc_GrabController, Assembly-CSharp
+        m_MethodName: OnGrabRight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1f020f91-26c4-4171-99a1-060cb712242d
+    m_ActionName: Gameplay/GrabRight[/XInputControllerWindows/rightShoulder,/XInputControllerWindows1/rightShoulder,/Keyboard/c]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1553578002517390672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6680327678701737086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb30eb607d67f8447ba8fe19a882831e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 3888157856325945576}
+  alreadyGrabbing: 0
 --- !u!1 &6709161810490097433
 GameObject:
   m_ObjectHideFlags: 0

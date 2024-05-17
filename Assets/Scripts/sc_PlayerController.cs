@@ -41,7 +41,7 @@ public class sc_PlayerController : MonoBehaviour
     private bool _canMove = true;
     private bool _isDead;
     private bool _isAttack;
-    private bool _canAttack;
+    private bool _canAttack = true;
     
     // Private Components.
     private Rigidbody _controllerRigidbody;
@@ -325,15 +325,17 @@ public class sc_PlayerController : MonoBehaviour
     private IEnumerator Attack()
     {
         _attackInput = false;
+        CanMove(false);
         
         playerAnimator.SetBool($"Attack", true);
-        playerAnimator.SetBool($"Attack", false);
         
         _isAttack = true;
         _canAttack = false;
         yield return new WaitForSeconds(attackAnimation.length);
+        playerAnimator.SetBool($"Attack", false);
         _isAttack = false;
 
+        CanMove(true);
         yield return new WaitForSeconds(1f);
         _canAttack = true;
     }
