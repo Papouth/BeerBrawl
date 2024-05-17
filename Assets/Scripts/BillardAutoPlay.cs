@@ -29,7 +29,7 @@ public class BillardAutoPlay : MonoBehaviour
 
 
     #region Customs Methods
-    private void FreezeYPos()
+    public void FreezeYPos()
     {
         ball.constraints = RigidbodyConstraints.FreezePositionY;
     }
@@ -41,7 +41,7 @@ public class BillardAutoPlay : MonoBehaviour
         {
             randNum = Random.Range(0, 4);
         
-            if (ball.velocity == Vector3.zero)
+            if (ball.velocity.magnitude <= 0.02f)
             {
                 ball.isKinematic = true;
                 ball.useGravity = false;
@@ -95,9 +95,9 @@ public class BillardAutoPlay : MonoBehaviour
                     Invoke("PropulseB", 0.35f);
                 }
         
-                Invoke("DestroyCueStick", 2f);
+                Invoke("DestroyCueStick", 1f);
         
-                timer = Random.Range(10f, 25f);
+                timer = Random.Range(8f, 20f);
             }
         }
     }
